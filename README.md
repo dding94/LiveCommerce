@@ -7,6 +7,7 @@ LiveCommerce 프로젝트는 오늘의집, 쿠팡과 같은 Modular Monolithic �
 팀 프로젝트 기간이 끝나 포크를 하여 따로 개선할 점을 찾아 작업 중 입니다.
 
 [진행한 PR이 궁금하시다면?](https://github.com/f-lab-edu/LiveCommerce/pulls?q=is%3Apr+is%3Aclosed)   
+
 ---
 ### 사용 기술 스택
 
