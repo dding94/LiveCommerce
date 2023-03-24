@@ -30,12 +30,11 @@ public class DecreaseInventoryProcessor {
     public InventoryResult execute(DecreaseInventoryCommand command) {
         Map<Long, Integer> itemQuantityMap = getItemQuantityMap(command.getItemQuantities());
         List<Inventory> inventories = inventoryRepository.findByItemIdIn(itemQuantityMap.keySet());
-        List<InventoryData> result = inventoryDecrease(itemQuantityMap, inventories);
-
+        List<InventoryData> result = decreaseInventory(itemQuantityMap, inventories);
         return new InventoryResult(result);
     }
 
-    private List<InventoryData> inventoryDecrease(
+    private List<InventoryData> decreaseInventory(
         Map<Long, Integer> itemQuantityMap,
         List<Inventory> inventories
     ) {
