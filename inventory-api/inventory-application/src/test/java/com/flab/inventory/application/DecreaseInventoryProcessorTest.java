@@ -103,8 +103,8 @@ public class DecreaseInventoryProcessorTest {
         Inventory inventory1 = Inventory.create(1L, SaleStatus.ON_SALE, "test", 30, InventoryState.INVENTORY_SAFE);
         Inventory inventory2 = Inventory.create(2L, SaleStatus.ON_SALE, "test", 30, InventoryState.INVENTORY_SAFE);
 
-        inventoryRepository.save(inventory1);
-        inventoryRepository.save(inventory2);
+        Long inventoryId1 = inventoryRepository.save(inventory1).getId();
+        Long inventoryId2 = inventoryRepository.save(inventory2).getId();
 
         List<ItemQuantity> itemQuantity = List.of(
             createItemQuantity(1L, 1),
@@ -120,8 +120,8 @@ public class DecreaseInventoryProcessorTest {
         sut.execute(command);
 
         // Assert
-        assertThat(inventoryRepository.findByItemId(1L).getQuantity()).isEqualTo(26);
-        assertThat(inventoryRepository.findByItemId(2L).getQuantity()).isEqualTo(16);
+        assertThat(inventoryRepository.findByItemId(inventoryId1).getQuantity()).isEqualTo(26);
+        assertThat(inventoryRepository.findByItemId(inventoryId2).getQuantity()).isEqualTo(16);
     }
 
     private DecreaseInventoryCommand createDecreaseInventoryCommand(List<ItemQuantity> itemQuantities) {

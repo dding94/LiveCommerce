@@ -7,6 +7,9 @@ CREATE TABLE user
     nickname varchar(255) not null comment '닉네임'
 );
 
+create unique index unique_idx_user_email on user (email);
+create index idx_user_name on user (username);
+
 -- item
 create table item
 (
@@ -18,6 +21,8 @@ create table item
     stock_quantity int(11) not null comment '상품 재고',
     model_number   int(11) not null
 );
+
+create index idx_item_name on item
 
 -- item_option_groups
 create table item_option_group
