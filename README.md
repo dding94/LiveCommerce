@@ -4,8 +4,6 @@
 LiveCommerce 프로젝트는 오늘의집, 쿠팡과 같은 Modular Monolithic 기반의 E-Commerce 애플리케이션입니다.
 사용자가 상품에 대해 주문을 하고 결제가 이루어지면 재고가 차감되는 일반적인 쇼핑몰의 기능을 구현을 했습니다.
 
-[리팩토링을 하다 현재는 코틀린 학습하면서 변환 작업 중 입니다!](https://github.com/dding94/LiveCommerceKotlin)
-
 [진행한 코드리뷰가 궁금하시다면..?](https://github.com/f-lab-edu/LiveCommerce/pulls?q=is%3Apr+is%3Aclosed)   
 
 ---
